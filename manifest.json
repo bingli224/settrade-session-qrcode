@@ -1,0 +1,21 @@
+{
+	"manifest_version"	: 2,
+
+	"name"	: "Settrade Session",
+	"description"	: "Get current settrade session from the cookies.",
+	"version"	: "18.07.01",
+
+	"browser_action"	: {
+		"default_popup"	: "session.html",
+		"default_title"	: "My settrade session"
+	},
+	
+	"permissions" 	: [
+		"cookies",
+		"http://*.settrade.com/*",
+		"https://*.settrade.com/*",
+		"background"
+	]
+
+}
+
