@@ -3,11 +3,25 @@
 <html>
 	<head>
 		<title>Settrade Session</title>
+		<script type='text/javascript' src="jquery.min.js"></script>
 		<script type='text/javascript' src="session.js"></script>
+		<script type='text/javascript' src="spreadsheet.js"></script>
 	</head>
 	<body>
 		<div id="qrcode"></div>
-		<button id="btn_session">Session</button><br />
-		<textarea id="content" hidden></textarea>
+		<button id="btn_to_qr">To QR Code</button><br />
+		<!--textarea id="content"></textarea>
+		<button id="btn_test_set_session">Test: Set Session</button><br /-->
+		<hr />
+		<h3>Cloud</h3>
+		URL: <input id="cloud_url" type='text' value='' /><br />
+		<hr />
+		<h3>Settrade Session</h3>
+		User: <input id="userId" type='text' value='' /><br />
+		Broker: <input id="brokerId" type='text' value='' /><br />
+		<button id='btn_import_session'>Import</button>
+		<button id='btn_export_session'>Export</button>
+		<hr />
+		<button id='btn_save'>Save</button>
 	</body>
 </html>

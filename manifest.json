@@ -1,21 +1,37 @@
 {
-	"manifest_version"	: 2,
+	"manifest_version"	: 3,
 
 	"name"	: "Settrade Session",
 	"description"	: "Get current settrade session from the cookies.",
-	"version"	: "19.10.26",
+	"version"	: "21.12.26",
 
-	"browser_action"	: {
+	"action"	: {
 		"default_popup"	: "session.html",
 		"default_title"	: "My settrade session"
 	},
 	
 	"permissions" 	: [
+		"scripting",
 		"cookies",
-		"http://*.settrade.com/*",
-		"https://*.settrade.com/*",
-		"background"
-	]
-
+		"background",
+		"contextMenus",
+		"storage"
+	],
+	
+	"background": {
+		"service_worker": "background.js",
+		"type": "module"
+	},
+	
+	"content_scripts": [{
+		"matches": ["<all_urls>"],
+		"js": ["session.js", "spreadsheet.js", "aes-gcm.js", "jquery.min.js"],
+		"run_at": "document_end"
+	}],
+	
+	"host_permissions": [
+		"*://*.settrade.com/*",
+		"https://script.google.com/macros/s/*"
+	],
+	"incognito": "split"
 }
-
