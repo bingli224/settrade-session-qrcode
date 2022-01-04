@@ -3,11 +3,74 @@
 <html>
 	<head>
 		<title>Settrade Session</title>
+		<script type='text/javascript' src="jquery.min.js"></script>
+		<script type='text/javascript' src="spreadsheet.js"></script>
 		<script type='text/javascript' src="session.js"></script>
 	</head>
 	<body>
 		<div id="qrcode"></div>
-		<button id="btn_session">Session</button><br />
-		<textarea id="content" hidden></textarea>
+		<button id="btn_to_qr">To QR Code</button><br />
+		<!--textarea id="content"></textarea>
+		<button id="btn_test_set_session">Test: Set Session</button><br /-->
+		<hr />
+		<h3>Cloud</h3>
+		URL: <input id="cloud_url" type='text' value='' /><br />
+		<hr />
+		<h3>Settrade Session :: Remote</h3>
+		<table>
+			<tr>
+				<td>
+					User:
+				</td><td>
+					<input id="userId" type='text' value='' /><br />
+				</td>
+			</tr><tr>
+				<td>
+					Broker:
+				</td><td>
+					<input id="brokerId" type='text' value='' /><br />
+				</td>
+			</tr><tr>
+				<td>
+					Account:
+				</td><td>
+					<input id="accountId" type='text' value='' /><br />
+				</td>
+			</tr><tr>
+				<td colspan=2>
+					<button id='btn_import_session'>Import</button>
+					<button id='btn_export_session'>Export</button>
+				</td>
+			</tr>
+		</table>
+		<hr />
+		<button id='btn_save'>Save locally</button>
+
+		<hr />
+		<h3>Test get cookies</h3>
+		<table>
+			<tr>
+				<td>
+					Cookie[url]:
+				</td><td>
+					<input type='checkbox' id='chk_cookies_url' />
+				</td><td>
+					<input type='text' id='cookies_url' value='https://*.settrade.com' /><br />
+				</td>
+			</tr><tr>
+				<td>
+					Cookie[domain]:
+				</td><td>
+					<input type='checkbox' id='chk_cookies_domain' />
+				</td><td>
+					<input type='text' id='cookies_domain' value='.settrade.com' /><br />
+				</td>
+			</tr><tr>
+				<td>
+					<button id="btn_get_cookies">Get Cookies</button>
+				</td>
+			</tr>
+		</table>
+		<textarea id="content"></textarea>
 	</body>
 </html>
